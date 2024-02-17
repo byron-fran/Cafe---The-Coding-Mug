@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <main class="h-screen flex items-center w-full justify-center">
+        <form method="POST" class="border border-gray-300 p-8 rounded-md w-full md:w-[50%]">
+            {% csrf_token %}
+            <label>{{form.username.label }}</label>
+            {{ form.username}}
+            <label>{{form.email.label }}</label>
+            {{ form.email}}
+            <label>{{form.password1.label }}</label>
+            {{ form.password1}}
+            <label>{{form.password2.label }}</label>
+            {{ form.password2}}
+            <button class="bg-indigo-600 w-full rounded-md p-2 mt-4 text-white hover:bg-indigo-700" type="submit">SignUp</button>
+            <div class="mt-2">
+                <a class="cursor-pointer" href="{% url 'login' %}">Do you have an account ? </a>
+            </div>
+        </form>
+
+    </main>
+{% endblock content %}
+
