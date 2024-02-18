@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+  
+    <div class="bg-[url('cafeteria.jpg')] relative h-[35rem] w-full  bg-no-repeat bg-center bg-cover " >             
+        {% include "navBar.html" %}
+        <h1 class="text-white z-10 font-extrabold text-4xl absolute  bottom-[50%] bottom-40  right-0 left-0 mx-auto inline-table ">Disfruta de un café</h1>
+        <div class="bg-black opacity-50 h-[35rem] z-10">
+        </div>
+    </div>
+    <div class="bg-amber-500 w-full">
+        <section  class="bg-white rounded-t-md  p-4 h-full  w-[90%] mx-auto z-10 pt-[4rem] ">
+            <div class="">
+                <h2 class="text-center font-bold text-2xl ">Sobre Nosotros</h2>
+                <p>
+                    {% lorem 2 b random %}
+                </p>
+                <div class="grid grid-cols-2 lg:grid-cols-3 mt-10">
+                    <div>
+                        <img class="lg:w-[150px] lg:h-[150px] mx-auto " src="{% static 'images/icono_te.svg' %}"/>
+                        <p class="text-center text-amber-700 font-bold uppercase text-1xl">Té</p>
+                    </div>
+                    <div>
+                        <img class="lg:w-[150px] lg:h-[150px] mx-auto " src="{% static 'images/icono_cafe.svg' %}"/>
+                        <p class="text-center text-amber-700 font-bold uppercase text-1xl">Café</p>
+                    </div>
+                    <div>
+                        <img class="lg:w-[150px] lg:h-[150px] mx-auto " src="{% static 'images/icono_postre.svg' %}"/>
+                        <p class="text-center text-amber-700 font-bold uppercase text-1xl">Postre</p>
+                    </div>
+                </div>
+               
+            </div>
+
+            
+        </section>
+       {% include "galery.html" %}
+ 
+    </div>
+    
+    {% include "menu.html" %}
+
+{% endblock content %}

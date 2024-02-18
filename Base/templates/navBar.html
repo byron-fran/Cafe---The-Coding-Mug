@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class=" w-full">
+    <div class="grid justify-center items-center mx-auto md:grid-cols-4 absolute z-10 w-[80%] left-0 right-0 top-10">
+        <div class="md:col-span-1 w-full flex items-center justify-center">
+            <a class="bg-amber-500 text-white text-center  p-4 rounded-md font-bold md:font-extrabold uppercase md:text-1xl " href="{% url "home" %}">The Coding Mug</a>
+        </div>
+        <div class="md:col-span-3 items-center w-full my-4 md:mt-0 flex flex-col md:flex-row justify-center md:justify-end gap-4 mr-[10rem]">
+            <a href="{% url 'menu' %}" class="text-amber-600 font-bold hover:text-amber-500">Menu</a>
+            {% if request.user.is_authenticated  %}
+             <a href="#" class="text-amber-600 text-center">Cerrar sesión</a>
+             {% else %}
+             
+            <a href="{% url 'login'%}" class="text-amber-600 text-center">iniciar sesión</a>
+
+            {% endif %}           
+            <a href="#" class="text-amber-600 text-center">Contacto</a>
+        </div>
+    </div>
+ 
+<div>
+{% endblock content %}

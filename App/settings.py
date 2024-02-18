@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'Auth',
-    'Menu'
+    'Menu',
+    'Base',
     
 ]
 
@@ -70,7 +71,7 @@ ROOT_URLCONF = 'App.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

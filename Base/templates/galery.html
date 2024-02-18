@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section class="bg-white rounded-t-md  p-4 h-full  w-[90%] mx-auto z-10 pt-[4rem] ">
+        <h2 class="text-amber-700 my-6 text-center text-2xl font-extrabold">Galeria</h2>
+        <div class="grid md:grid-cols-4 gap-4 md:grid-rows-5 lg:w-[80%] mx-auto ">
+            <img  class="image rounded-ms object-cover h-full md:row-start-1 md:row-end-3 " src="{% static 'images/Galeria/galeria_01.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:row-start-1 md:row-end-2 md:col-start-2 md:col-end-4 row-span-1 row-span-2" src="{% static 'images/Galeria/galeria_02.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full" src="{% static 'images/Galeria/galeria_03.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:row-span-2 " src="{% static 'images/Galeria/galeria_04.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:col-start-3 md:col-end-5" src="{% static 'images/Galeria/galeria_05.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:col-start-3 md:col-end-5" src="{% static 'images/Galeria/galeria_06.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:row-start-3 md:row-end-5" src="{% static 'images/Galeria/galeria_07.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:col-start-2 md:col-end-5" src="{% static 'images/Galeria/galeria_08.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:col-start-1 md:col-end-3 " src="{% static 'images/Galeria/galeria_09.jpg'%}" alt="img-galery"/>
+            <img  class="image rounded-ms object-cover h-full md:col-start-3 md:col-end-5" src="{% static 'images/Galeria/galeria_10.jpg'%}" alt="img-galery"/>
+    
+        </div>
+    </section>
+    <div class="modal" style="position: absolute;">
+        <button style="display : none; " class="btn-close">X</button>
+    </div>
+    <script src="{% static 'js/App.js'%}"></script>
+{% endblock content %}
