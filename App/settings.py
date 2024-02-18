@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'Auth',
     'Menu',
     'Base',
+    'Blog'
     
 ]
 

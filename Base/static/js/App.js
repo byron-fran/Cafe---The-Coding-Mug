@@ -13,12 +13,12 @@ const btnClose = document.querySelector('.btn-close');
             btnClose.style.position = 'fixed'
             btnClose.textContent = 'X'
             btnClose.classList.add('bg-red-600','text-center', 'text-white', 'p-4', 'rounded-md', 'justify-center', 'items-center', 'z-50','bottom-0', 'top-4', 'w-[50px]','h-[50px]' , 'left-10', 'hover:bg-red-700')
-            contendor.classList.add('bg-black', 'fixed', 'h-screen', 'w-screen', 'mx-auto', 'top-0', 'bottom-0', 'z-20', )
+            contendor.classList.add('bg-black', 'fixed', 'h-screen', 'w-screen', 'mx-auto', 'top-0', 'bottom-0', 'z-20' )
     
             contendor.innerHTML = `
-                <div class="flex justify-center items-center z-20 h-full">
+                <div class="flex justify-center bg-black items-center z-20 h-full">
                
-                  <img src=${e.target.src} alt='image' class="z-50 object-cover md:w-[1000px] absolute md:h-[1000px] mx-auto"/>
+                  <img src=${e.target.src} alt='image' class="z-50 object-contain md:w-[1000px] absolute md:h-[1000px] mx-auto"/>
     
                 </div>          
             `;

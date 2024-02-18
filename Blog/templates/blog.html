@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+    <div class="bg-[url('cafeteria.jpg')] relative h-[35rem] w-full  bg-no-repeat bg-center bg-cover " >             
+        {% include "navBar.html" %}
+        <h1 class="text-white z-10 font-extrabold text-4xl absolute  bottom-[50%] bottom-40  right-0 left-0 mx-auto inline-table ">Blog</h1>
+        <div class="bg-black opacity-50 h-[35rem] z-10">
+        </div>
+    </div>
+    <div>
+        <div class="mt-8 md:w-[90%] mx-auto">
+            {% for post in blog %}
+                <div class="flex flex-col  md:flex-row gap-4 my-8">
+                    <img class="md:w-[250px] md:h-[200px] object-cover" src={{post.image.url}} alt={{post.image}}/>
+                    <div class="flex flex-col justify-between">
+                        <div class="flex flex-col  h-full">
+                            <h2 class="font-bold text-2xl"> {{ post.title }}</h2>
+                            <p class="line-clamp-3 mt-4"> {{ post.description }} </p>
+                            <p class="font-bold mt-1">publicado: <span class="text-amber-600">{{post.created}}</span></p>
+                        </div>
+                        <a href="{% url 'detail_blog' post.slug %}" style="width : fit-content;" class="w-content mt-4 md:mt-0 cursor-pointer px-4 rounded-sm block-inline bg-amber-500 hover:bg-amber-600 text-white font-bold p-2">Ver más</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

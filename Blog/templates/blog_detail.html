@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% include "navBar.html" %}
+
+   
+    <div class="w-[90%] lg:w-[50%] mx-auto flex justify-center items-center mt-40">
+        <div>
+            <div>
+                <h1 class="text-center font-extrabold text-2xl uppercase my-8">{{blog.title }}</h1>
+                <img class="mx-auto object-cover w-full" src={{ blog.image.url }} alt={{blog.image.url}}/>
+                <p class="text-amber-600 font-bold mt-1"> {{ blog.created }}</p>
+            </div>
+            <div class=" my-8">
+                <h1 class="">{{blog.description }}</h1>
+            </div>
+      
+        </div>
+    </div>
+
+{% endblock content %}
