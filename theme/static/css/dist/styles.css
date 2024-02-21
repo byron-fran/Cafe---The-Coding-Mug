@@ -884,6 +884,10 @@ select {
   margin-top: 15rem;
 }
 
+.mt-\[20rem\] {
+  margin-top: 20rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -972,10 +976,6 @@ select {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[90\%\%\] {
-  width: 90%%;
 }
 
 .cursor-pointer {
@@ -1295,6 +1295,14 @@ select {
   }
 
   .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .md\:mt-\[10rem\] {
+    margin-top: 10rem;
+  }
+
+  .md\:mt-\[5rem\] {
     margin-top: 5rem;
   }
 
