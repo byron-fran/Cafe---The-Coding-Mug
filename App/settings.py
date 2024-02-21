@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'Auth',
     'Menu',
     'Base',
-    'Blog'
+    'Blog',
+    'Order',
     
 ]
 
@@ -80,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "Order.context_processors.total_quantity"
             ],
         },
     },
@@ -158,10 +160,10 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 AUTH_USER_MODEL = 'Auth.User'
 
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_USE_TLS =True
-EMAIL_PORT=587
-EMAIL_HOST_USER= '1byron1999@gmail.com'
-EMAIL_HOST_PASSWORD = 'Falsalarma1$'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_USE_TLS =True
+# EMAIL_PORT=587
+# EMAIL_HOST_USER= '1byron1999@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Falsalarma1$'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<main class="bg-amber-800 h-full py-10">
+    {% include "navBar.html" %}
+    <div class='grid  md:grid-cols-2 mt-[12rem]  md:mt-20 md:w-[90%] mx-auto gap-4 h-screen'>
+        <div>
+            <img class=" object-cover mx-auto" src={{ dish.image.url}} alt={{dish.name}}/>
+        </div>
+        <div>
+            <h2 class="text-white mt-4 font-extrabold uppercase text-2xl">{{ dish.name }} </h2>
+            <p class="text-white mt-4"> {{ dish.description }} </p>
+            <p class="text-amber-400 mt-4 font-extrabold text-3xl  "> {{ dish.price }}$</P>
+        
+             <form method="POST">
+                {% csrf_token %}
+                <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+
+
+                </select>
+                <div class="mt-4 w-full bg-amber-500 rounded-md  p-2 text-center hover:bg-amber-600">
+                    {% if request.user.is_authenticated %}
+                    <a id="btn_add" href="{% url  'new_order' dish.id  %}"  class=" text-white  font-extrabold uppercase cursor-pointer  ">Ordenar Ahora</a>
+                    
+                    {% else %}
+                    <a id="btn_add" href="{% url  'login'  %}?next=/menu/{{dish.slug}}"  class=" text-white  font-extrabold uppercase cursor-pointer  ">Ordenar Ahora</a>
+                    {% endif %}
+                </div> 
+                <input type="hidden" />
+            </form>
+
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+</main>
+{% endblock content %}

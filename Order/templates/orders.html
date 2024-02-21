@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<main class="bg-amber-800 h-full py-10">
+    {% include "navBar.html" %}
+
+    {% if orders|length %}
+    
+    <div class='grid md:grid-cols-4  md:mt-20 md:w-[90%] mx-auto gap-4 '>
+        <div class="grid  gap-4 col-span-3">
+            {% for order in orders %}
+            <div class="w-full flex  justify-between border  border-amber-900 p-4 rounded-md  ">
+                <div class="flex gap-4 justify-center ">
+                    <img src={{ order.image.url }} alt="{{ image.name }}" class="w-[100px] h-[100px] object-cover"/>
+                    <div>
+                        <p class="text-white">{{ order.name }} </p>
+                        <p class="text-white font-extrabold">{{ order.price }}$ X 1</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <a href="{% url  'remove_order' order.id %}"  class="bg-amber-500 hover:bg-amber-600 cursor-pointer p-3 rounded-lg font-extrabold text-white">X</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% comment %} section payment {% endcomment %}
+        <div class="col-span-1">
+            <div class="w-full border border-amber-900 rounded-lg p-4">
+
+                {% if total > 0 %}
+                <p class="font-extrabold text-white ">Total: ${{ total }} </p>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <h1 class="mt-[15rem] md:mt-20 md:w-[90%] mx-auto text-center text-white font-extrabold text-3xl">No tienes ordenes todavia</h1>
+    {% endif %}
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+</main>
+{% endblock content %}

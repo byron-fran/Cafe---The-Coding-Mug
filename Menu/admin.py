@@ -3,6 +3,6 @@ from .models import Menu
 # Register your models here.
 
 admin.site.register(Menu)
-
 class MenuAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'price']
+    prepopulated_fields = {"slug": ("name", )}
