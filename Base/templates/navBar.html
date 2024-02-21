@@ -7,15 +7,16 @@
         </div>
         <div class="md:col-span-3 items-center w-full my-4 md:mt-0 flex flex-col md:flex-row justify-center md:justify-end gap-4 mr-[10rem]">
             <a href="{% url 'menu' %}" class="text-amber-600 font-bold hover:text-amber-500">Menu</a>
+            <a href="{% url 'blog' %}" class="text-amber-600 font-bold hover:text-amber-500">Blog</a>
+            <a href="#" class="text-amber-600 font-bold hover:text-amber-500">Contacto</a>
             {% if request.user.is_authenticated  %}
-             <a href="#" class="text-amber-600 font-bold hover:text-amber-500">Cerrar sesión</a>
+             <a href="{% url 'account_logout' %}" class="text-amber-600 font-bold hover:text-amber-500">Cerrar sesión</a>
              {% else %}
              
             <a href="{% url 'login'%}" class="text-amber-600 font-bold hover:text-amber-500">iniciar sesión</a>
 
             {% endif %}           
-            <a href="{% url 'blog' %}" class="text-amber-600 font-bold hover:text-amber-500">Blog</a>
-            <a href="#" class="text-amber-600 font-bold hover:text-amber-500">Contacto</a>
+
         </div>
     </div>
  
