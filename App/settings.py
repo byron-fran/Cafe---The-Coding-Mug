@@ -158,7 +158,7 @@ TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 AUTH_USER_MODEL = 'Auth.User'
-
+APPEND_SLASH=False
 
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_HOST='smtp.gmail.com'

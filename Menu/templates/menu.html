@@ -4,22 +4,34 @@
 {% block content %}
     <main class="bg-amber-800 h-full py-10">
         {% include "navBar.html" %}
-        <div class='grid md:grid-cols-2 lg:grid-cols-3 mt-[12rem]  md:mt-20 md:w-[90%] mx-auto gap-4'>
-            {% for dish  in menu %}
-                <div class="grid grid-cols-2  gap-4 p-4 border border-amber-900 rounded-sm">
-                        <img src={{ dish.image.url }} alt={{dish.image.url}} class="h-[200px] w-[200px] object-cover rounded-sm"/>
-                    <div class='flex flex-col justify-between w-full'>
-                        <p class='text-white font-bold uppercase'>{{ dish.name }}</p>
-                        <p class='text-white line-clamp-4'>{{ dish.description }}</p>
-                        <div class="w-full">
-                            <p class='text-white font-extrabold text-2xl'>{{ dish.price }}$</p>
-                            <div class='w-full'>
-                                <a href="{% url 'menu_detail' dish.slug %}" class="  bg-amber-500 hover:bg-amber-600 text-white font-extrabold p-2 rounded-md cursor-pointer block text-center">Ordenar</a>
+       
+        <div class="mt-[12rem] md:mt-20 w-[90%] mx-auto flex  mb-8 justify-end ">
+            <form action="{% url 'menu' %}" method="GET">
+                <input name="search" class="rounded-md focus:outline-amber-900 " type="search" placeholder="Buscar algo"/>
+                <button type="submit" class="cursor-pointer bg-amber-500 text-white p-2 rounded-md ">Buscar</button>
+
+            </form>
+        </div>
+        {% if message|length %}
+            <h1 class="text-center font-extrabold text-white text-2xl">{{message}}</h1>
+        {% else %}
+            <div class='grid md:grid-cols-2 lg:grid-cols-3    md:w-[90%] mx-auto gap-4'>
+                {% for dish  in menu %}
+                    <div class="grid grid-cols-2  gap-4 p-4 border border-amber-900 rounded-sm">
+                            <img src={{ dish.image.url }} alt={{dish.image.url}} class="h-[200px] w-[200px] object-cover rounded-sm"/>
+                        <div class='flex flex-col justify-between w-full'>
+                            <p class='text-white font-bold uppercase'>{{ dish.name }}</p>
+                            <p class='text-white line-clamp-4'>{{ dish.description }}</p>
+                            <div class="w-full">
+                                <p class='text-white font-extrabold text-2xl'>{{ dish.price }}$</p>
+                                <div class='w-full'>
+                                    <a href="{% url 'menu_detail' dish.slug %}" class="  bg-amber-500 hover:bg-amber-600 text-white font-extrabold p-2 rounded-md cursor-pointer block text-center">Ordenar</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </main>
 {% endblock content %}
