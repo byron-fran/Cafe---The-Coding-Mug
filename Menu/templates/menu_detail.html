@@ -20,7 +20,7 @@
                     <a id="btn_add" href="{% url  'new_order' dish.id  %}"  class=" text-white  font-extrabold uppercase cursor-pointer  ">Ordenar Ahora</a>
                     
                     {% else %}
-                    <a id="btn_add" href="{% url  'login'  %}?next=/menu/{{dish.slug}}"  class=" text-white  font-extrabold uppercase cursor-pointer  ">Ordenar Ahora</a>
+                    <a id="btn_add" href="{% url  'login'  %}?next=/menu/{{dish.slug}}/"  class=" text-white  font-extrabold uppercase cursor-pointer  ">Ordenar Ahora</a>
                     {% endif %}
                 </div> 
                 <input type="hidden" />

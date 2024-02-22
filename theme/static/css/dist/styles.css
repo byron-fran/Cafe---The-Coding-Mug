@@ -888,6 +888,10 @@ select {
   margin-top: 20rem;
 }
 
+.mt-\[18rem\] {
+  margin-top: 18rem;
+}
+
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -1300,10 +1304,6 @@ select {
 
   .md\:mt-\[10rem\] {
     margin-top: 10rem;
-  }
-
-  .md\:mt-\[5rem\] {
-    margin-top: 5rem;
   }
 
   .md\:h-\[1000px\] {

@@ -5,13 +5,14 @@
     <main class="bg-amber-800 h-full py-10">
         {% include "navBar.html" %}
        
-        <div class="mt-[12rem] md:mt-20 w-[90%] mx-auto flex  mb-8 justify-end ">
+        <div class="mt-[18rem] md:mt-20 w-[90%] mx-auto flex  mb-8 justify-end ">
             <form action="{% url 'menu' %}" method="GET">
                 <input name="search" class="rounded-md focus:outline-amber-900 " type="search" placeholder="Buscar algo"/>
                 <button type="submit" class="cursor-pointer bg-amber-500 text-white p-2 rounded-md ">Buscar</button>
 
             </form>
         </div>
+
         {% if message|length %}
             <h1 class="text-center font-extrabold text-white text-2xl">{{message}}</h1>
         {% else %}

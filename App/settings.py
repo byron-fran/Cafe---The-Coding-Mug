@@ -146,7 +146,10 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('API_SECRET_CLOUDINARY')
 }
 
-# Default primary key field type
+STRIPE_SECRET_KEY= env('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+# Default prima
+# ry key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 INTERNAL_IPS = [
     "127.0.0.1",
