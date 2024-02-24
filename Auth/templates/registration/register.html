@@ -4,15 +4,16 @@
 {% block content %}
 
     <main class="h-screen flex items-center w-full justify-center">
-        <form method="POST" class="border border-amber-900 text-white p-8 rounded-md w-full md:w-[40%]">
+        
+        <form   method="POST"  class="border border-amber-900 text-white p-8 rounded-md w-full md:w-[40%]">
             {% csrf_token %}
             {% if form.errors%}
-            <p class="text-red-500 ">{{forms.errors}}</p>
+            <p class="text-red-500 ">{{form.errors}} </p>
             {% endif %}
             <label>{{form.username.label }}</label>
             {{ form.username}}
             <label>{{form.email.label }}</label>
-            {{ form.email}}
+            {{ form.email }}
             <label>{{form.password1.label }}</label>
             {{ form.password1}}
             <label>{{form.password2.label }}</label>

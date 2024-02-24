@@ -1,10 +1,4 @@
-from typing import Any
-from django.forms.forms import BaseForm
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
-from django.views.generic import ListView
-from django.views.generic import CreateView, FormView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, FormView
 from  .models import Review
 from .forms import ReviewForm
 from django.shortcuts import redirect
@@ -29,7 +23,7 @@ class FormReview(HasReviewMixin, FormView):
         title = form.cleaned_data['title']
         comment = form.cleaned_data['comment']
         user = self.request.user
-       
+  
         existing_review = Review.objects.filter(title=title, user=user).first()
 
         if existing_review:

@@ -5,8 +5,11 @@ from .models import User
 class UserForm(UserCreationForm):
     email = forms.EmailField(
         label='Email',       
-        widget=forms.TextInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black', 'placeholder' : 'example@gmail.com'} ))
-
+        widget=forms.EmailInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black', 'placeholder' : 'example@gmail.com'} ),
+      
+        
+    )
+    
     password1 = forms.CharField(
         label="Password",
         
@@ -19,6 +22,7 @@ class UserForm(UserCreationForm):
         widget=forms.PasswordInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black'}),
 
     )
+    
     
     class Meta:
         model = User

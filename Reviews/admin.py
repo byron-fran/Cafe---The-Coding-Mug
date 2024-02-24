@@ -5,4 +5,4 @@ from .models import Review
  
 admin.site.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display =[ 'user', 'title']
+    list_display =[ 'user', 'title', 'created_at']

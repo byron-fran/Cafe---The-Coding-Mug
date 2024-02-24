@@ -22,7 +22,7 @@
 {% endif %}
     {% for review in reviews %}
         <div class="bg-white p-4 rounded-md my-4">
-            <p class="font-extrabold ">{{ review.title }}|<span class="text-amber-500">fecha </span><p>
+            <p class="font-extrabold ">{{ review.title }}|<span class="text-amber-500">{{ review.created_at }}</span><p>
              <div class="mt-4 flex justify-between ">
                 <p class="">{{ review.comment }}</p>
 
