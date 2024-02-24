@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<main class="bg-amber-800 h-full py-10">
+  <div class="w-[90%] mx-auto lg:w-[70%]">
+    {% if request.user.is_authenticated %}
+    {% with user_reviews=request.user.review_set.all %}
+        {% if user_reviews %}
+            {% for review in user_reviews %}
+                <p></p>
+            {% endfor %}
+        {% else %}
+            <div class="flex gap-2 justify-end">
+                <a class="text-white font-bold" href="{% url 'add_comment' %}">Add comment</a>
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm11-4.2a1 1 0 1 0-2 0V11H7.8a1 1 0 1 0 0 2H11v3.2a1 1 0 1 0 2 0V13h3.2a1 1 0 1 0 0-2H13V7.8Z" clip-rule="evenodd"/>
+                </svg>
+            </div>            
+        {% endif %}
+    {% endwith %}
+{% endif %}
+    {% for review in reviews %}
+        <div class="bg-white p-4 rounded-md my-4">
+            <p class="font-extrabold ">{{ review.title }}|<span class="text-amber-500">fecha </span><p>
+             <div class="mt-4 flex justify-between ">
+                <p class="">{{ review.comment }}</p>
+
+                <div class="flex flex-col justify-end">
+
+                    <p class="text-amber-500 font-bold">{{ review.user.username }}</p>
+                </div>
+             </div>   
+        </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock content %}

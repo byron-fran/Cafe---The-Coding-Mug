@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+{% include  'navBar.html' %}
+<main class="w-[90%] mx-auto md:w-[50%] bg-amber-800 h-full py-10 mt-[20rem] md:mt-20 ">
+
+    <form action="{% url 'add_comment' %}" method="POST" class="mt-8">
+        {% csrf_token %}
+        <label class="text-white">{{ form.title.label}} </label>
+        {{ form.title }}
+        <label class="text-white">{{ form.comment.label}} </label>
+        {{ form.comment }}
+
+        <button class="w-full  bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-md font-bold" type="submit">Add Comment</button>
+    </form>
+</main>
+{% endblock content %}

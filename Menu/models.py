@@ -8,6 +8,8 @@ class Menu(models.Model):
     image = models.ImageField(upload_to='menu/')
     description = models.TextField()
     slug = models.SlugField(null=True, unique=True)
+    
+    
        
     class Meta:
         verbose_name = 'menu'

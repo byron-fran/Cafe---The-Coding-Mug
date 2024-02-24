@@ -6,6 +6,9 @@
     <main class="h-screen flex items-center w-full justify-center">
         <form method="POST" class="border border-amber-900 text-white p-8 rounded-md w-full md:w-[40%]">
             {% csrf_token %}
+            {% if form.errors%}
+            <p class="text-red-500 ">{{forms.errors}}</p>
+            {% endif %}
             <label>{{form.username.label }}</label>
             {{ form.username}}
             <label>{{form.email.label }}</label>

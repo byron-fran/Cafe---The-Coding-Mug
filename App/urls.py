@@ -27,7 +27,8 @@ urlpatterns = [
     path('', include('Menu.urls')),
     path('', include('Base.urls')),
     path('', include('Blog.urls')),
-    path('orders/', include('Order.urls'))
+    path('orders/', include('Order.urls')),
+    path('reviews/', include('Reviews.urls'))
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

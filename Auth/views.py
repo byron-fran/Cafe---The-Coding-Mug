@@ -19,8 +19,7 @@ class Register(FormView):
     template_name = 'registration/register.html'
     form_class = UserForm
     redirect_authenticated_user = True
-    login_url = reverse_lazy('')  # Redirige a 'products' si el usuario está autenticado
-
+    login_url = reverse_lazy('')  
     def test_func(self):
   
         return not self.request.user.is_authenticated

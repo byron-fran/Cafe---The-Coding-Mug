@@ -12,9 +12,9 @@
                 {% endif %}
                 {% csrf_token %}
                  <label class='block my-2'>{{ form.username.label }} </label>
-                <input type="email" name="username" placeholder="example@gmail.com" class="w-full border border-gray-300 rounded-md p-2"></input>
+                <input type="email" name="username" placeholder="example@gmail.com" class="w-full border text-black border-gray-300 rounded-md p-2"></input>
                 <label class='block my-2'>{{ form.password.label }} </label>
-                <input type="password" name="password" class="w-full border border-gray-300 rounded-md p-2"></input>
+                <input type="password" name="password" class="w-full border border-gray-300 rounded-md p-2 text-black"></input>
                 <button type="submit" class="bg-amber-500 w-full text-white rounded-md p-2 mt-4 hover:bg-amber-600">Login</button>
                 <div class="mt-2">
                     <a class="cursor-pointer text-amber-500" href="{% url 'signup' %}">do not you have an account ? </a>

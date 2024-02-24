@@ -5,27 +5,26 @@ from .models import User
 class UserForm(UserCreationForm):
     email = forms.EmailField(
         label='Email',       
-        widget=forms.TextInput(attrs={'class': 'w-full border border-gray-300 rounded-md', 'placeholder' : 'example@gmail.com'} ))
+        widget=forms.TextInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black', 'placeholder' : 'example@gmail.com'} ))
 
     password1 = forms.CharField(
         label="Password",
-        strip=False,
-        widget=forms.PasswordInput(attrs={'class': 'w-full border border-gray-300 rounded-md'}),
+        
+        widget=forms.PasswordInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black'}),
         
     )
     
     password2 = forms.CharField(
         label="Password confirmation",
-        widget=forms.PasswordInput(attrs={'class': 'w-full border border-gray-300 rounded-md'}),
-        strip=False,
-       
+        widget=forms.PasswordInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black'}),
+
     )
     
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'w-full border border-gray-300 rounded-md', 'placeholder' : 'Write your name'}),
+            'username': forms.TextInput(attrs={'class': 'w-full border border-gray-300 rounded-md text-black', 'placeholder' : 'Write your name'}),
         }
     def clean_email(self):
         email = self.cleaned_data.get('email')

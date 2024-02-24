@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'Base',
     'Blog',
     'Order',
+    'Reviews'
     
 ]
 
@@ -81,7 +82,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "Order.context_processors.total_quantity"
+                "Order.context_processors.total_quantity",
+                "Reviews.context_processors.all_reviews",
+                
             ],
         },
     },
@@ -95,8 +98,12 @@ WSGI_APPLICATION = 'App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':env('DB_NAME'),
+        'PORT' : env('DB_PORT'),
+        'HOST' : env('DB_HOST'),
+        'USER' : env('DB_USER'),
+        'PASSWORD' : env('DB_PASSWORD')
     }
 }
 
